@@ -57,11 +57,23 @@ def cadastrar_produto() -> None:
 
     print(f'O produto {produto.nome} foi cadastrado com sucesso!')
     sleep(2)
-    main()
+    menu()
     
-    
+
 def listar_produto() -> None:
-    pass
+    if len(produtos) > 0:
+        print('Listagem de produtos')
+        print('____________________')
+        for produto in produtos:
+            print(produto)
+            print('_______________')
+            sleep(1)
+            
+    else:
+        print('Ainda não existe produtos cadastrados.')
+        
+    sleep(2)
+    menu()
 
 def comprar_produto() -> None:
     pass
