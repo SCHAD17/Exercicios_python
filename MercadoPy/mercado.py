@@ -82,7 +82,25 @@ def visualizae_carrinho() -> None:
     pass
 
 def fechar_pedido() -> None:
-    pass
+    if len(carrinho) > 0:
+        valor_total: float = 0
+
+        print('Produtos do carrinho')
+        for item in carrinho:
+            for dados in item.items():
+                print(dados[0])
+                print(f'Quantidade: {dados[1]}')
+                valor_total += dados[0].preco * dados[1]
+                print('_____________________________')
+                sleep(2)
+        print(f'Sua fatura é {formata_float_str_moeda(valor_total)}')
+        print('Volte sempre')
+        carrinho.clear()
+        sleep(5)
+    else:
+        print('Ainda não existe produtos no carrinho.')
+    sleep(2)
+    menu()
 
 def pega_produto_por_codigo(codigo: int) -> Produto:
     pass
