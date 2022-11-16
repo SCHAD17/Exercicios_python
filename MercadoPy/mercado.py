@@ -46,8 +46,20 @@ def menu() -> None:
         menu()
 
 def cadastrar_produto() -> None:
-    pass
+    print('Cadastro do prouto')
+    print('==================')
 
+    nome: str = input('Informe o nome de produto: ')
+    preco: float = float(input('Informe o preço do produto: '))
+
+    produto: Produto = Produto(nome, preco)
+    produtos.append(produto)
+
+    print(f'O produto {produto.nome} foi cadastrado com sucesso!')
+    sleep(2)
+    main()
+    
+    
 def listar_produto() -> None:
     pass
 
